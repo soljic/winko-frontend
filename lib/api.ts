@@ -18,12 +18,16 @@ export interface Raffle {
   consolationPrizeValue?: string;
 }
 
-// Docker Networking Fix:
-// Server-side (inside container) must use the internal Docker service name (http://api:8080).
-// Client-side (browser) must use the public host URL (http://localhost:5081).
-const API_URL = typeof window === 'undefined'
-  ? 'http://api:8080/api'
-  : (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5081/api');
+// API URL Logic:
+// 1. If NEXT_PUBLIC_API_URL is set (Vercel/Render), use it for everything (or client-side).
+// 2. If NOT set, assume local Docker environment:
+//    - Server-side: http://api:8080/api (Internal Docker DNS)
+//    - Client-side: http://localhost:5081/api
+const API_URL = process.env.NEXT_PUBLIC_API_URL || (
+  typeof window === 'undefined'
+    ? 'http://api:8080/api'
+    : 'http://localhost:5081/api'
+);
 
 export async function getActiveRaffles(): Promise<Raffle[]> {
   // Mock data for now if API is not running or CORS issues
