@@ -56,7 +56,8 @@ export default function SellPage() {
     const uploadImage = async (file: File) => {
         const formData = new FormData();
         formData.append('file', file);
-        const uploadRes = await fetch('http://localhost:5081/api/upload', {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5081/api';
+        const uploadRes = await fetch(`${apiUrl}/upload`, {
             method: 'POST',
             body: formData,
         });
