@@ -1,4 +1,5 @@
 export type Language = 'en' | 'hr' | 'de';
+// Vercel Deploy Trigger
 
 export const translations = {
     en: {
