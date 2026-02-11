@@ -47,8 +47,8 @@ export const translations = {
                 steps: [
                     { title: "Browse & Discover", desc: "Explore verified listings from exclusive brand drops." },
                     { title: "Buy Micro-Tickets", desc: "Purchase tickets starting at €2.00. The more you buy, the higher your odds." },
-                    { title: "The Draw (Always Happens)", desc: "If the target is met, you play for the Item. If not, you play for a massive Cash Pot (50/50 Split)." },
-                    { title: "Claim Prize", desc: "Winners receive the item shipped globally or the cash prize directly to their wallet." }
+                    { title: "The Draw (Always Happens)", desc: "If the target is met, you play for the Item. If not, you play for a massive Cash Pot." },
+                    { title: "Claim Prize", desc: "Winners receive the item shipped globally or the cash prize directly to their wallet. Even if you don't win, you still get discounts from your favorite brands." }
                 ]
             },
             seller: {
@@ -72,7 +72,7 @@ export const translations = {
                 ]
             },
             cta: {
-                title: "Ready to join the revolution?",
+                title: "Join the Live Raffles and Win big",
                 browse: "Start Browsing",
                 sell: "Become a Seller"
             }
